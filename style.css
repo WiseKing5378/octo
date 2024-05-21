@@ -1,0 +1,405 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url(/font/NotoSans-Regular.ttf);
+}
+
+header {
+  background-image: url(img/marian-kroell-OVXlWNcQV5M-unsplash.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 274px;
+}
+
+header h1 {
+  color: #ffffff;
+  font-family: "Noto Sans";
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 1px;
+  text-align: center;
+  max-width: 650px;
+}
+
+.cards-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 290px;
+  height: 448px;
+  padding: 16px 16px 20px 16px;
+  gap: 25px;
+  border: 1px solid #d3d8e4;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.card::before {
+  content: attr(data-category-name);
+  position: absolute;
+  top: 12px;
+  left: 0;
+  padding: 6px 15px 8px 16px;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.card[data-color="blue"]::before {
+  background: #081580;
+}
+.card[data-color="auqa"]::before {
+  background: #00b6dd;
+}
+.card[data-color="auqa"] h3 {
+  color: #00b6dd;
+}
+.card[data-color="blue"] h3 {
+  color: #081580;
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-family: Noto Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.800000011920929px;
+  text-align: left;
+  margin-bottom: 6px;
+}
+
+.card h2 {
+  color: #010101;
+  font-family: Noto Sans;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.card p {
+  color: #010101;
+  font-family: Noto Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.6000000238418579px;
+  text-align: left;
+}
+
+.button {
+  background: none;
+  color: #ffffff;
+  width: 160px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.800000011920929px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.button:hover {
+  width: 165px;
+  opacity: 0.9;
+  font-size: 12px;
+}
+.button--blue {
+  border: 2px solid #081580;
+  background: #081580;
+}
+.button--auqa {
+  border: 2px solid #00b6dd;
+  background: #00b6dd;
+}
+.button--transparent {
+  border: 2px solid #00b6dd;
+  background: none;
+}
+
+.banner-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #010101;
+  box-sizing: border-box;
+  padding: 50px 15px;
+  gap: 30px;
+}
+
+.banner-content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.banner-content > h2 {
+  font-family: Noto Sans;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #00b6dd;
+  margin-bottom: 22px;
+}
+
+.banner-content > p {
+  font-family: Noto Sans;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.banner-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.banner-section > img {
+  width: 290px;
+  height: 146px;
+}
+
+.cards-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 100px 0;
+  gap: 40px;
+  max-width: 1200px;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.slider-buttons {
+  display: flex;
+  height: 100px;
+  gap: 25px;
+  margin: 30px 0 30px 30px;
+}
+.button-prev {
+  display: flex;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 13px;
+  height: 26px;
+}
+.button-next {
+  display: flex;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 13px;
+  height: 26px;
+}
+
+@media screen and (max-width: 575px) {
+  .banner-buttons {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .banner-buttons > .button {
+    width: 290px;
+  }
+
+  .card:nth-child(1n + 3) {
+    display: none;
+  }
+}
+@media screen and (max-width: 1199px) and (min-width: 576px) {
+  .card:nth-child(1n + 5) {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  header {
+    height: 236px;
+  }
+  .card {
+    height: 448px;
+    width: 258px;
+  }
+  .card > img {
+    height: 140px;
+  }
+
+  .banner-section > img {
+    width: 450px;
+    height: 275px;
+  }
+
+  .cards-slider{
+    max-width: 546px;
+  }
+}
+@media screen and (min-width: 768px) {
+  header {
+    height: 276px;
+  }
+
+  .cards-section {
+    padding: 60px 0;
+  }
+  .card {
+    height: 440px;
+    width: 345px;
+    padding: 28px;
+    gap: 10px;
+  }
+  .card > img {
+    height: 150px;
+  }
+
+  .banner-section > img {
+    width: 596px;
+    height: 364px;
+  }
+  .cards-slider{
+    max-width: 720px;
+  }
+}
+@media screen and (min-width: 992px) {
+  header {
+    height: 340px;
+  }
+  header > h1 {
+    font-size: 54px;
+    line-height: 60px;
+    letter-spacing: 1.2000000476837158px;
+  }
+
+  .cards-section {
+    padding: 80px 0;
+  }
+  .card {
+    height: 470px;
+    width: 455px;
+    padding: 30px;
+  }
+  .card > img {
+    height: 170px;
+  }
+
+  .banner-content {
+    justify-content: start;
+    width: 455px;
+  }
+  .banner-content > h2 {
+    font-family: Noto Sans;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: 1.2000000476837158px;
+    text-align: left;
+  }
+  .banner-content > p {
+    font-family: Noto Sans;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 1.2000000476837158px;
+    text-align: left;
+  }
+  .banner-buttons {
+    justify-content: start;
+    width: 100%;
+  }
+
+  .banner-section > img {
+    width: 455px;
+    height: 332px;
+  }
+  .cards-slider{
+    max-width: 940px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  header {
+    height: 396px;
+  }
+  header > h1 {
+    font-size: 62px;
+    line-height: 68px;
+    letter-spacing: 1.399999976158142px;
+  }
+
+  .cards-section {
+    padding: 100px 0;
+  }
+  .card {
+    height: 500px;
+    width: 360px;
+  }
+
+  .banner-content {
+    width: 555px;
+  }
+  .banner-section > img {
+    width: 458px;
+    height: 380px;
+  }
+  .banner-content > h2 {
+    font-family: Noto Sans;
+    font-size: 62px;
+    font-weight: 700;
+    line-height: 68px;
+    letter-spacing: 1.399999976158142px;
+  }
+  .banner-content > p {
+    font-family: Noto Sans;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 1.2000000476837158px;
+  }
+
+  .cards-slider{
+    max-width: 1140px;
+  }
+}
